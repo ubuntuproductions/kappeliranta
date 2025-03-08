@@ -126,6 +126,13 @@
             "deps": [
                 "lib/wedding_card_unconfirmed.dart"
             ]
+        },
+        {
+            "x": -4614.0,
+            "y": 2161.0,
+            "w": 85.33333333333333,
+            "h": 85.33333333333333,
+            "widget": "const Image(image:AssetImage('assets/waving-hand_1f44b.png'),fit:BoxFit.cover,)"
         }
     ]
 }

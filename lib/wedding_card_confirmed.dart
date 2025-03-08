@@ -57,31 +57,6 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
   bool? dressArtistVisibility = false;
 
   @override
-  void initState() {
-    super.initState();
-    if (widget.weddingParam?.flowersStatus == 'Confirmed') {
-      backgroundColorFlorist = const Color(0x1a27ff00);
-      floristVisibility = true;
-    }
-    if (widget.weddingParam?.photographerStatus == 'Confirmed') {
-      backgroundColorPhotographer = const Color(0x1a27ff00);
-      photographerVisibility = true;
-    }
-    if (widget.weddingParam?.goldsmithStatus == 'Confirmed') {
-      backgroundColorGoldsmith = const Color(0x1a27ff00);
-      goldsmithVisibility = true;
-    }
-    if (widget.weddingParam?.makeupStatus == 'Confirmed') {
-      backgroundColorMakeup = const Color(0x1a27ff00);
-      makeupArtistVisibility = true;
-    }
-    if (widget.weddingParam?.dressStatus == 'Confirmed') {
-      backgroundColorDress = const Color(0x1a27ff00);
-      dressArtistVisibility = true;
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Material(
       color: const Color(0xfff5f5f5),
@@ -821,5 +796,30 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.weddingParam?.flowersStatus == 'Confirmed') {
+      backgroundColorFlorist = const Color(0x1a27ff00);
+      floristVisibility = true;
+    }
+    if (widget.weddingParam?.photographerStatus == 'Confirmed') {
+      backgroundColorPhotographer = const Color(0x1a27ff00);
+      photographerVisibility = true;
+    }
+    if (widget.weddingParam?.goldsmithStatus == 'Confirmed') {
+      backgroundColorGoldsmith = const Color(0x1a27ff00);
+      goldsmithVisibility = true;
+    }
+    if (widget.weddingParam?.makeupStatus == 'Confirmed') {
+      backgroundColorMakeup = const Color(0x1a27ff00);
+      makeupArtistVisibility = true;
+    }
+    if (widget.weddingParam?.dressStatus == 'Confirmed') {
+      backgroundColorDress = const Color(0x1a27ff00);
+      dressArtistVisibility = true;
+    }
   }
 }

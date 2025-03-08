@@ -4,8 +4,6 @@ import 'package:nowa_runtime/nowa_runtime.dart';
 import 'package:kappeliranta/models/get_weddings_unconfirmed_model1.dart';
 import 'package:kappeliranta/wedding_card_unconfirmed.dart';
 import 'package:kappeliranta/api/weddings.api.dart';
-import 'package:kappeliranta/wedding_page.dart';
-import 'package:kappeliranta/wedding_card_confirmed.dart';
 
 @NowaGenerated({'auto-width': 390.0, 'auto-height': 1984.0})
 class HomeStackUnconfirmed extends StatefulWidget {

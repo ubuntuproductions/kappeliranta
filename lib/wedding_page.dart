@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nowa_runtime/nowa_runtime.dart';
+import 'package:kappeliranta/models/get_wedding_model.dart';
+import 'package:kappeliranta/api/weddings.api.dart';
 import 'package:kappeliranta/user_info.dart';
 import 'package:kappeliranta/confirm_profesional_dialog.dart';
 import 'package:kappeliranta/firebase/firebase.dart';
 import 'package:kappeliranta/login_firebase.dart';
-import 'package:kappeliranta/models/get_wedding_model.dart';
-import 'package:kappeliranta/api/weddings.api.dart';
 
 @NowaGenerated({'auto-height': 2000.0, 'auto-width': 365.0})
 class WeddingPage extends StatefulWidget {
@@ -26,7 +26,7 @@ class _WeddingPageState extends State<WeddingPage> {
 
   String? weddingDate = '03.02.2025';
 
-  bool? loader = false;
+  bool? loader = true;
 
   String? packageLevel = 'Package';
 
@@ -79,94 +79,6 @@ class _WeddingPageState extends State<WeddingPage> {
   String? dressArtistName = 'makeupArtistName';
 
   String? goldsmithName = 'makeupArtistName';
-
-  Future<void> fetchData() async {
-    var weddingFromApi =
-        await Weddings().getWedding(record_ID_request: widget.record_ID);
-    couplesName = weddingFromApi!.data!.records![0]?.fields?.couplesNames;
-    weddingDate = weddingFromApi!.data!.records![0]?.fields?.weddingDate;
-    weddingStatus = weddingFromApi!.data!.records![0]?.fields?.status;
-    floristStatus = weddingFromApi!.data!.records![0]?.fields?.floristStatus;
-    floristName = weddingFromApi!.data!.records![0]?.fields?.floristName;
-    if (floristStatus == 'Confirmed') {
-      floristVisibility = true;
-      colorFlorist = const Color(0x1a27ff00);
-    }
-    photographerStatus =
-        weddingFromApi!.data!.records![0]?.fields?.photographerStatus;
-    photographerName =
-        weddingFromApi!.data!.records![0]?.fields?.photographerName;
-    if (photographerStatus == 'Confirmed') {
-      photographerVisibility = true;
-      colorPhotographer = const Color(0x1a27ff00);
-    }
-    goldsmithStatus =
-        weddingFromApi!.data!.records![0]?.fields?.goldsmithStatus;
-    goldsmithName = weddingFromApi!.data!.records![0]?.fields?.goldsmithName;
-    if (goldsmithStatus == 'Confirmed') {
-      GoldsmithVisibility = true;
-      colorGoldsmith = const Color(0x1a27ff00);
-    }
-    makeupStatus =
-        weddingFromApi!.data!.records![0]?.fields?.makeUpArtistStatus;
-    makeupArtistName =
-        weddingFromApi!.data!.records![0]?.fields?.makeUpArtistName;
-    if (makeupStatus == 'Confirmed') {
-      MakeupArtistVisibility = true;
-      ColorMakeUp = const Color(0x1a27ff00);
-    }
-    dressStatus = weddingFromApi!.data!.records![0]?.fields?.weddingDressStatus;
-    dressArtistName =
-        weddingFromApi!.data!.records![0]?.fields?.weddingDressName;
-    if (dressStatus == 'Confirmed') {
-      dressArtistVisibility = true;
-      colorDress = const Color(0x1a27ff00);
-    }
-    weddingFromApi!.data!.records![0]?.fields?.preliminaryNotes;
-    documentLink = weddingFromApi!.data!.records![0]?.fields?.driveDoc;
-    setState(() {});
-    if (UserInfo.of(context, listen: false).userRole == 'Venue') {
-      confirmButtonVisibility = false;
-      assitanceConfirmed = true;
-    } else {
-      if (UserInfo.of(context, listen: false).userRole == 'Florist' &&
-          floristStatus == 'Confirmed') {
-        confirmButtonVisibility = false;
-        assitanceConfirmed = true;
-      } else {
-        if (UserInfo.of(context, listen: false).userRole == 'Goldsmith' &&
-            goldsmithStatus == 'Confirmed') {
-          confirmButtonVisibility = false;
-          assitanceConfirmed = true;
-        }
-        if (UserInfo.of(context, listen: false).userRole == 'Make-up artist' &&
-            makeupStatus == 'Confirmed') {
-          confirmButtonVisibility = false;
-          assitanceConfirmed = true;
-        } else {
-          if (UserInfo.of(context, listen: false).userRole == 'Bridal' &&
-              dressStatus == 'Confirmed') {
-            confirmButtonVisibility = false;
-            assitanceConfirmed = true;
-          } else {
-            if (UserInfo.of(context, listen: false).userRole ==
-                    'Photographer' &&
-                photographerStatus == 'Confirmed') {
-              confirmButtonVisibility = false;
-              assitanceConfirmed = true;
-            }
-          }
-        }
-      }
-    }
-    loader = false;
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    fetchData();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -1366,5 +1278,93 @@ class _WeddingPageState extends State<WeddingPage> {
         foregroundColor: const Color(0xffffffff),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData();
+  }
+
+  Future<void> fetchData() async {
+    var weddingFromApi =
+        await Weddings().getWedding(record_ID_request: widget.record_ID);
+    couplesName = weddingFromApi!.data!.records![0]?.fields?.couplesNames;
+    weddingDate = weddingFromApi!.data!.records![0]?.fields?.weddingDate;
+    weddingStatus = weddingFromApi!.data!.records![0]?.fields?.status;
+    floristStatus = weddingFromApi!.data!.records![0]?.fields?.floristStatus;
+    floristName = weddingFromApi!.data!.records![0]?.fields?.floristName;
+    if (floristStatus == 'Confirmed') {
+      floristVisibility = true;
+      colorFlorist = const Color(0x1a27ff00);
+    }
+    photographerStatus =
+        weddingFromApi!.data!.records![0]?.fields?.photographerStatus;
+    photographerName =
+        weddingFromApi!.data!.records![0]?.fields?.photographerName;
+    if (photographerStatus == 'Confirmed') {
+      photographerVisibility = true;
+      colorPhotographer = const Color(0x1a27ff00);
+    }
+    goldsmithStatus =
+        weddingFromApi!.data!.records![0]?.fields?.goldsmithStatus;
+    goldsmithName = weddingFromApi!.data!.records![0]?.fields?.goldsmithName;
+    if (goldsmithStatus == 'Confirmed') {
+      GoldsmithVisibility = true;
+      colorGoldsmith = const Color(0x1a27ff00);
+    }
+    makeupStatus =
+        weddingFromApi!.data!.records![0]?.fields?.makeUpArtistStatus;
+    makeupArtistName =
+        weddingFromApi!.data!.records![0]?.fields?.makeUpArtistName;
+    if (makeupStatus == 'Confirmed') {
+      MakeupArtistVisibility = true;
+      ColorMakeUp = const Color(0x1a27ff00);
+    }
+    dressStatus = weddingFromApi!.data!.records![0]?.fields?.weddingDressStatus;
+    dressArtistName =
+        weddingFromApi!.data!.records![0]?.fields?.weddingDressName;
+    if (dressStatus == 'Confirmed') {
+      dressArtistVisibility = true;
+      colorDress = const Color(0x1a27ff00);
+    }
+    weddingFromApi!.data!.records![0]?.fields?.preliminaryNotes;
+    documentLink = weddingFromApi!.data!.records![0]?.fields?.driveDoc;
+    setState(() {});
+    if (UserInfo.of(context, listen: false).userRole == 'Venue') {
+      confirmButtonVisibility = false;
+      assitanceConfirmed = true;
+    } else {
+      if (UserInfo.of(context, listen: false).userRole == 'Florist' &&
+          floristStatus == 'Confirmed') {
+        confirmButtonVisibility = false;
+        assitanceConfirmed = true;
+      } else {
+        if (UserInfo.of(context, listen: false).userRole == 'Goldsmith' &&
+            goldsmithStatus == 'Confirmed') {
+          confirmButtonVisibility = false;
+          assitanceConfirmed = true;
+        }
+        if (UserInfo.of(context, listen: false).userRole == 'Make-up artist' &&
+            makeupStatus == 'Confirmed') {
+          confirmButtonVisibility = false;
+          assitanceConfirmed = true;
+        } else {
+          if (UserInfo.of(context, listen: false).userRole == 'Bridal' &&
+              dressStatus == 'Confirmed') {
+            confirmButtonVisibility = false;
+            assitanceConfirmed = true;
+          } else {
+            if (UserInfo.of(context, listen: false).userRole ==
+                    'Photographer' &&
+                photographerStatus == 'Confirmed') {
+              confirmButtonVisibility = false;
+              assitanceConfirmed = true;
+            }
+          }
+        }
+      }
+    }
+    loader = false;
   }
 }

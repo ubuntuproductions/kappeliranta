@@ -3,9 +3,9 @@ import 'package:kappeliranta/weddings_model.dart';
 import 'package:nowa_runtime/nowa_runtime.dart';
 import 'package:kappeliranta/user_info.dart';
 import 'package:kappeliranta/models/get_all_weddings_confirmed_model.dart';
-import 'package:kappeliranta/api/weddings.api.dart';
 import 'package:kappeliranta/wedding_page.dart';
 import 'package:kappeliranta/wedding_card_confirmed.dart';
+import 'package:kappeliranta/api/weddings.api.dart';
 
 @NowaGenerated({'auto-width': 390.0, 'auto-height': 1984.0})
 class HomeStackConfirmed extends StatefulWidget {
@@ -101,36 +101,39 @@ class _HomeStackConfirmedState extends State<HomeStackConfirmed> {
                 builder: (context, data) => ListView.separated(
                   itemCount: data!.data!.records!.length,
                   itemBuilder: (context, index) {
-                    final RecordsItem6? element = data!.data!.records![index];
+                    final RecordsItem6? element = data?.data?.records?[index];
                     return SizedBox(
                       width: null,
                       height: null,
                       child: GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) =>
-                                  WeddingPage(record_ID: element!.recordId!)!));
+                              builder: (context) => WeddingPage(
+                                    record_ID: element?.recordId,
+                                  )));
                         },
                         child: WeddingCardConfirmed(
-                            weddingParam: WeddingsModel(
-                          couplesName: element?.fields?.couplesNames,
-                          packageLevel: element?.fields?.package,
-                          weddingStatus: element?.fields?.status,
-                          flowersStatus: element?.fields?.floristStatus,
-                          weddingDate: element?.fields?.weddingDate,
-                          photographerStatus:
-                              element?.fields?.photographerStatus,
-                          goldsmithStatus: element?.fields?.goldsmithStatus,
-                          makeupStatus: element?.fields?.makeUpArtistStatus,
-                          dressStatus: element?.fields?.weddingDressStatus,
-                          floristName: element?.fields?.floristName,
-                          photographerName: element?.fields?.photographerName,
-                          goldsmithName: element?.fields?.goldsmithName,
-                          makeupArtistName: element?.fields?.makeUpArtistName,
-                          dressArtistName: element?.fields?.weddingDressName,
-                          preeliminaryNotes: element?.fields?.preliminaryNotes,
-                          record_ID: element?.recordId,
-                        )),
+                          weddingParam: WeddingsModel(
+                            couplesName: element?.fields?.couplesNames,
+                            packageLevel: element?.fields?.package,
+                            weddingStatus: element?.fields?.status,
+                            flowersStatus: element?.fields?.floristStatus,
+                            weddingDate: element?.fields?.weddingDate,
+                            photographerStatus:
+                                element?.fields?.photographerStatus,
+                            goldsmithStatus: element?.fields?.goldsmithStatus,
+                            makeupStatus: element?.fields?.makeUpArtistStatus,
+                            dressStatus: element?.fields?.weddingDressStatus,
+                            floristName: element?.fields?.floristName,
+                            photographerName: element?.fields?.photographerName,
+                            goldsmithName: element?.fields?.goldsmithName,
+                            makeupArtistName: element?.fields?.makeUpArtistName,
+                            dressArtistName: element?.fields?.weddingDressName,
+                            preeliminaryNotes:
+                                element?.fields?.preliminaryNotes,
+                            record_ID: element?.recordId,
+                          ),
+                        ),
                       ),
                     );
                   },
