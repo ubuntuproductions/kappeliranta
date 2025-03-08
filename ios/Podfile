@@ -1,3 +1,6 @@
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/CocoaPods/Specs.git'
+
 # Define a global platform for your project
 platform :ios, '13.0'
 
@@ -8,7 +11,7 @@ target 'Runner' do
   # Pods for Runner
   pod 'Alamofire', '~> 5.4'
   pod 'SwiftyJSON', '~> 5.0'
-
+  pod 'app_links'  # Add this line
 end
 
 target 'RunnerTests' do
@@ -17,5 +20,4 @@ target 'RunnerTests' do
 
   # Pods for RunnerTests
   # Add any test-specific pods here if needed
-
 end
