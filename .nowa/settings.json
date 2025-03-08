@@ -6,13 +6,6 @@
     },
     "main": [
         {
-            "key": "supabase",
-            "statement": "await SupabaseService.setup();",
-            "imports": [
-                "package:kappeliranta/integrations/supabase.i.dart"
-            ]
-        },
-        {
             "key": "firebase",
             "statement": "await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);",
             "imports": [

@@ -696,69 +696,6 @@
                 }
             }
         },
-        "token?grant_type=password": {
-            "get": {
-                "collection": "UsersSupabase",
-                "operationId": "signUp",
-                "summary": "Nowa Auto Generated",
-                "description": "",
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                },
-                                "value": null
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "signup": {
-            "get": {
-                "collection": "UsersSupabase",
-                "operationId": "signUp",
-                "summary": "Nowa Auto Generated",
-                "description": "",
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                },
-                                "value": null
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "kappeliranta_users?select=id": {
-            "get": {
-                "collection": "UsersSupabase",
-                "operationId": "signUp",
-                "summary": "Nowa Auto Generated",
-                "description": "",
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                },
-                                "value": null
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "datasheets/dstUXsQoTZBBLsGJ41/records?viewId=viwJMpoBzulls&fieldKey=name": {
             "post": {
                 "collection": "Aitable",
