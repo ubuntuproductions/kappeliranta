@@ -1,0 +1,53 @@
+{
+    "url": "https://zvocwvxcrhxnhmmaxsqf.supabase.co",
+    "anon": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp2b2N3dnhjcmh4bmhtbWF4c3FmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQzODc2NzksImV4cCI6MjA0OTk2MzY3OX0.STp2QeNc9RU-4x33YzM9DtOdYNhGxx2VpsXdcGhv0Q4",
+    "tables": [
+        {
+            "name": "profiles",
+            "properties": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "required": true,
+                    "format": "uuid",
+                    "description": "Note:\nThis is a Primary Key.<pk/>"
+                },
+                {
+                    "name": "updated_at",
+                    "type": "string",
+                    "required": false,
+                    "format": "timestamp with time zone",
+                    "description": null
+                },
+                {
+                    "name": "username",
+                    "type": "string",
+                    "required": false,
+                    "format": "text",
+                    "description": null
+                },
+                {
+                    "name": "full_name",
+                    "type": "string",
+                    "required": false,
+                    "format": "text",
+                    "description": null
+                },
+                {
+                    "name": "avatar_url",
+                    "type": "string",
+                    "required": false,
+                    "format": "text",
+                    "description": null
+                },
+                {
+                    "name": "website",
+                    "type": "string",
+                    "required": false,
+                    "format": "text",
+                    "description": null
+                }
+            ]
+        }
+    ]
+}
