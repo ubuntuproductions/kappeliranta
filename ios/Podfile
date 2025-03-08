@@ -8,7 +8,6 @@ target 'Runner' do
   # Pods for Runner
   pod 'Alamofire', '~> 5.4'
   pod 'SwiftyJSON', '~> 5.0'
-  pod 'app_links' # Add this line if it's missing
 
 end
 
