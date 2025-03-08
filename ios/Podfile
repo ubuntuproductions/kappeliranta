@@ -1,0 +1,12 @@
+# Define a global platform for your project
+platform :ios, '13.0'
+
+target 'YourAppTarget' do
+  # Use dynamic frameworks
+  use_frameworks!
+
+  # Pods for YourAppTarget
+  pod 'Alamofire', '~> 5.4'
+  pod 'SwiftyJSON', '~> 5.0'
+
+end
