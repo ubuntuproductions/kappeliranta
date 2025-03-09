@@ -35,7 +35,7 @@ class _HomeStackConfirmedState extends State<HomeStackConfirmed> {
         ),
         child: NFlex(
           direction: Axis.vertical,
-          spacing: 32.0,
+          spacing: 20.0,
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -144,7 +144,7 @@ class _HomeStackConfirmedState extends State<HomeStackConfirmed> {
                     bottom: 0.0,
                   ),
                   separatorBuilder: (context, index) => const SizedBox(
-                    height: 24.0,
+                    height: 16.0,
                     width: 20.0,
                   ),
                   reverse: false,

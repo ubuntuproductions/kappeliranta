@@ -138,12 +138,11 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
                     ),
                   ),
                   FlexSizedBox(
-                    child: NFlex(
+                    width: double.infinity,
+                    child: Wrap(
                       direction: Axis.horizontal,
-                      spacing: 10.0,
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      spacing: 8.0,
+                      runSpacing: 6.0,
                       children: [
                         FlexSizedBox(
                           child: ConstrainedBox(
@@ -179,7 +178,7 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
                                           spacing: 5.0,
                                           mainAxisSize: MainAxisSize.min,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.start,
+                                              MainAxisAlignment.center,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
@@ -187,7 +186,7 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
                                               width: null,
                                               height: null,
                                               child: Text(
-                                                'Status:',
+                                                'Package:',
                                                 style: TextStyle(
                                                   fontSize: 12.0,
                                                   color:
@@ -201,8 +200,8 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
                                               height: null,
                                               child: Text(
                                                 widget.weddingParam
-                                                        ?.weddingStatus ??
-                                                    'Missing status',
+                                                        ?.packageLevel ??
+                                                    'Missing level',
                                                 style: const TextStyle(
                                                     fontSize: 12.0,
                                                     color: Color(0xffffffff)),
@@ -262,7 +261,7 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
                                           spacing: 5.0,
                                           mainAxisSize: MainAxisSize.min,
                                           mainAxisAlignment:
-                                              MainAxisAlignment.center,
+                                              MainAxisAlignment.start,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
@@ -270,7 +269,7 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
                                               width: null,
                                               height: null,
                                               child: Text(
-                                                'Package:',
+                                                'Status:',
                                                 style: TextStyle(
                                                   fontSize: 12.0,
                                                   color:
@@ -284,8 +283,8 @@ class _WeddingCardConfirmedState extends State<WeddingCardConfirmed> {
                                               height: null,
                                               child: Text(
                                                 widget.weddingParam
-                                                        ?.packageLevel ??
-                                                    'Missing level',
+                                                        ?.weddingStatus ??
+                                                    'Missing status',
                                                 style: const TextStyle(
                                                     fontSize: 12.0,
                                                     color: Color(0xffffffff)),

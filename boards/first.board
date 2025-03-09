@@ -59,16 +59,6 @@
             ]
         },
         {
-            "x": -1124.0,
-            "y": 119.0,
-            "w": 390.0,
-            "h": 848.0,
-            "widget": "const LoginFirebase()",
-            "deps": [
-                "lib/login_firebase.dart"
-            ]
-        },
-        {
             "x": -2394.0,
             "y": 118.5,
             "w": 390.0,
@@ -133,6 +123,16 @@
             "w": 85.33333333333333,
             "h": 85.33333333333333,
             "widget": "const Image(image:AssetImage('assets/waving-hand_1f44b.png'),fit:BoxFit.cover,)"
+        },
+        {
+            "x": -1124.0,
+            "y": 120.5,
+            "w": 390.0,
+            "h": 844.0,
+            "widget": "const LoginFirebase()",
+            "deps": [
+                "lib/login_firebase.dart"
+            ]
         }
     ]
 }
