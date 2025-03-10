@@ -1,10 +1,21 @@
 source 'https://cdn.cocoapods.org/'
 
+# Define a global platform for your project
 platform :ios, '13.0'
 
 target 'Runner' do
+  # Use dynamic frameworks
   use_frameworks!
 
-  # Add the app_links dependency
-  pod 'app_links'
+  # Pods for Runner
+  pod 'Alamofire', '~> 5.4'
+  pod 'SwiftyJSON', '~> 5.0'
+end
+
+target 'RunnerTests' do
+  # Use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RunnerTests
+  # Add any test-specific pods here if needed
 end
