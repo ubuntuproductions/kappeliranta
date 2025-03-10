@@ -35,6 +35,7 @@ class _LoginFirebaseState extends State<LoginFirebase> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       body: SafeArea(
         child: Stack(
           fit: StackFit.expand,
@@ -47,9 +48,9 @@ class _LoginFirebaseState extends State<LoginFirebase> {
               bottom: 0.0,
               child: Padding(
                 padding: const EdgeInsets.only(
-                  left: 24.0,
-                  right: 24.0,
-                  top: 24.0,
+                  left: 0.0,
+                  right: 0.0,
+                  top: 0.0,
                   bottom: 24.0,
                 ),
                 child: Form(
@@ -62,12 +63,16 @@ class _LoginFirebaseState extends State<LoginFirebase> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       FlexSizedBox(
-                        width: double.infinity,
-                        height: 200.0,
-                        child: const Image(
-                          image: AssetImage(
-                              'assets/XE4S8853_aitable_optimized.jpg'),
-                          fit: BoxFit.cover,
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 390.0),
+                          child: AspectRatio(
+                            aspectRatio: 16 / 6,
+                            child: const Image(
+                              image: AssetImage(
+                                  'assets/XE4S8853_aitable_optimized.jpg'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                         ),
                       ),
                       FlexSizedBox(
