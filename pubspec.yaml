@@ -7,7 +7,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  app_links: ^6.3.3
   cupertino_icons: ^1.0.2
   nowa_runtime: ^0.0.44
   flutter_html: ^3.0.0-beta.2
@@ -19,6 +18,7 @@ dependencies:
   cloud_firestore: ^5.1.0
   firebase_auth: ^5.1.4
   intl: ^0.19.0
+  app_links: ^6.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
