@@ -4,4 +4,7 @@ platform :ios, '13.0'
 
 target 'Runner' do
   use_frameworks!
+
+  # Add the app_links dependency
+  pod 'app_links'
 end
