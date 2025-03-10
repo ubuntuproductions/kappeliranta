@@ -7,7 +7,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  app_links: ^6.4.0
+  app_links: ^6.3.3
   cupertino_icons: ^1.0.2
   nowa_runtime: ^0.0.44
   flutter_html: ^3.0.0-beta.2
