@@ -1,0 +1,16 @@
+
+platform :ios, '13.0'
+
+target 'Runner' do
+  # Use dynamic frameworks
+  use_frameworks!
+
+end
+
+target 'RunnerTests' do
+  # Use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RunnerTests
+  # Add any test-specific pods here if needed
+end
