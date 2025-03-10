@@ -25,7 +25,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.3"
-  app_links_platform_interface:
+  _platform_interface:
     dependency: transitive
     description:
       name: app_links_platform_interface
